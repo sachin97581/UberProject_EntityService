@@ -30,7 +30,7 @@ public class Booking extends BaseModel{
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date endTime;
 
-    private Long totalDuration;
+    private Long totalDistance;
 
     //    @JsonBackReference
     @ManyToOne //(fetch = FetchType.LAZY)
@@ -38,4 +38,10 @@ public class Booking extends BaseModel{
 
     @ManyToOne  //(fetch = FetchType.LAZY)
     private Passenger passenger;
+
+    @OneToOne
+    private ExactLocation startLocation;
+
+    @OneToOne
+    private ExactLocation endLocation;
 }
