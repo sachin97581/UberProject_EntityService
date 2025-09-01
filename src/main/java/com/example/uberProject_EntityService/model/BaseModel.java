@@ -5,6 +5,8 @@ package com.example.uberProject_EntityService.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -13,6 +15,8 @@ import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
+@Getter
+@Setter
 public abstract class BaseModel { // we create basemodel class asbstrect because we do not want make's it's object one can able to create it's object aslo
 
     // we use @Id annotation to create primary key
